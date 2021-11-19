@@ -1,13 +1,13 @@
 #include <iostream>
 
-const double p_aluminium = 2.82;
+const double p_aluminium = 0.0282;
 
 double calculateResistance(const double wireLength, const double transverseSection) {
 	return p_aluminium*wireLength/transverseSection;
 }
 
 int main() {
-	std::cout << "Enter length of wire and transverse section:\n";
+	std::cout << "Enter length of wire (meters) and transverse section (millimeters):\n";
 	
 	double wireLength, transverseSection;
 	if (!(std::cin >> wireLength) || !(std::cin >> transverseSection)) {
@@ -20,5 +20,5 @@ int main() {
 		return 2;
 	}
 	
-	std::cout << "Wire resistance: " << calculateResistance(wireLength, transverseSection) << "*10^(-8) Om";
+	std::cout << "Wire resistance: " << calculateResistance(wireLength, transverseSection) << " Om";
 }
