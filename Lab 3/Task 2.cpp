@@ -23,14 +23,14 @@ int main() {
 		case 'a':
 		{
 			std::cout << "\nEnter elements amount:\n";
-			size_t elementsAmount;
-			if (!(std::cin >> elementsAmount)){
+			long long elementsAmount;
+			if (!(std::cin >> elementsAmount) || (elementsAmount < 0)){
 				std::cerr << "Error reading data";
 				return 2;
 			}
 			
 			double result=0;
-			for (size_t i=1; i<=elementsAmount; ++i) result+=getElementByIndex(i);
+			for (size_t i=1; i<=(size_t)elementsAmount; ++i) result+=getElementByIndex(i);
 			std::cout << "\nSumm of first " << elementsAmount << " elemnts: " << result;
 			
 			break;
