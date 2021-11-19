@@ -44,15 +44,15 @@ int main() {
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	}
 	
-	std::cout << std::fixed << std::setw(5) << 'X' << " | " << std::setw(10) << "Y\n";
+	std::cout << std::setprecision(3) << std::fixed << std::setw(6) << 'X' << " | " << std::setw(10) << "Y\n";
 	
 	size_t i_max = (size_t)(round((fabs(x)+fabs(x_end))/fabs(step)));
 	for (size_t i = 0; i<=i_max; ++i) {
 		try{
 			const double y = calculateFunction(x);
-			std::cout << std::setw(5) << x << " | " << std::setw(10) << y << '\n';
+			std::cout << std::setw(6) << x << " | " << std::setw(10) << y << '\n';
 		}catch(...) {
-			std::cout << std::setw(5) << x << " | " << std::setw(10) << "No solution\n";
+			std::cout << std::setw(6) << x << " | " << std::setw(10) << "No solution\n";
 		}
 		x+=step;
 	}
